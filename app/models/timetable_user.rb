@@ -1,0 +1,2 @@
+class TimetableUser < ApplicationRecord
+end

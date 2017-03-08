@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Timetable Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Timetable</th>
+      <th>Notice</th>
+      <th>Program name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @timetable_users.each do |timetable_user| %>
+      <tr>
+        <td><%= timetable_user.user_id %></td>
+        <td><%= timetable_user.timetable_id %></td>
+        <td><%= timetable_user.notice %></td>
+        <td><%= timetable_user.program_name %></td>
+        <td><%= link_to 'Show', timetable_user %></td>
+        <td><%= link_to 'Edit', edit_timetable_user_path(timetable_user) %></td>
+        <td><%= link_to 'Destroy', timetable_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Timetable User', new_timetable_user_path %>

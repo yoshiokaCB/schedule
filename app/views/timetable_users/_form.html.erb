@@ -1,0 +1,37 @@
+<%= form_for(timetable_user) do |f| %>
+  <% if timetable_user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(timetable_user.errors.count, "error") %> prohibited this timetable_user from being saved:</h2>
+
+      <ul>
+      <% timetable_user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.number_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :timetable_id %>
+    <%= f.number_field :timetable_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :notice %>
+    <%= f.text_area :notice %>
+  </div>
+
+  <div class="field">
+    <%= f.label :program_name %>
+    <%= f.text_field :program_name %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

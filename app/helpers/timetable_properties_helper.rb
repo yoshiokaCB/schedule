@@ -1,0 +1,2 @@
+module TimetablePropertiesHelper
+end

@@ -1,0 +1,2 @@
+class TimetableProperty < ApplicationRecord
+end

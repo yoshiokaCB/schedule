@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Timetable:</strong>
+  <%= @timetable_property.timetable_id %>
+</p>
+
+<p>
+  <strong>Upper limit:</strong>
+  <%= @timetable_property.upper_limit %>
+</p>
+
+<%= link_to 'Edit', edit_timetable_property_path(@timetable_property) %> |
+<%= link_to 'Back', timetable_properties_path %>

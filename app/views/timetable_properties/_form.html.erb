@@ -1,0 +1,27 @@
+<%= form_for(timetable_property) do |f| %>
+  <% if timetable_property.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(timetable_property.errors.count, "error") %> prohibited this timetable_property from being saved:</h2>
+
+      <ul>
+      <% timetable_property.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :timetable_id %>
+    <%= f.number_field :timetable_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :upper_limit %>
+    <%= f.number_field :upper_limit %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

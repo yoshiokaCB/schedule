@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Timetable Properties</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Timetable</th>
+      <th>Upper limit</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @timetable_properties.each do |timetable_property| %>
+      <tr>
+        <td><%= timetable_property.timetable_id %></td>
+        <td><%= timetable_property.upper_limit %></td>
+        <td><%= link_to 'Show', timetable_property %></td>
+        <td><%= link_to 'Edit', edit_timetable_property_path(timetable_property) %></td>
+        <td><%= link_to 'Destroy', timetable_property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Timetable Property', new_timetable_property_path %>

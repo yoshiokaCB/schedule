@@ -15,6 +15,7 @@ class TimetablesController < ApplicationController
   # GET /timetables/new
   def new
     @timetable = Timetable.new
+    @timetable.timetable_users.build
   end
 
   # GET /timetables/1/edit
@@ -27,7 +28,7 @@ class TimetablesController < ApplicationController
     @timetable = Timetable.new(timetable_params)
 
     respond_to do |format|
-      if @timetable.save
+      if @timetable.save!
         format.html { redirect_to @timetable, notice: 'Timetable was successfully created.' }
         format.json { render :show, status: :created, location: @timetable }
       else
@@ -69,6 +70,9 @@ class TimetablesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def timetable_params
-      params.require(:timetable).permit(:datetime, :starttime, :endtime)
+      params.require(:timetable).permit(
+        :datetime, :starttime, :endtime,
+        timetable_users_attributes: [:id, :user_id, :timetable_id, :notice, :select, :_destroy]
+      )
     end
 end

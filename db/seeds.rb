@@ -5,3 +5,40 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+n          = Time.new
+day        = n.day
+start_min  = 0
+end_min    = 0
+one_day    = 60*60*24
+
+10.times do |i|
+
+  start_hour = 9
+  end_hour   = 10
+
+  n += one_day
+  input_date = Time.new(n.year, n.mon, n.day)
+
+  10.times do |j|
+
+    start_hour += 1
+    end_hour   += 1
+    start_date = Time.new(n.year, n.mon, n.day, start_hour, start_min)
+    end_date   = Time.new(n.year, n.mon, n.day, end_hour, end_min)
+    Timetable.create(datetime: input_date, starttime: start_date, endtime: end_date)
+  end
+
+end
+
+
+
+t = Timetable.new
+t.datetime = n
+# t.starttime =
+# t.endtime =
+
+
+# starttime: Wed, 08 Mar 2017 05:50:00 UTC +00:00,
+ # endtime: Wed, 08 Mar 2017 05:50:00 UTC +00:00,

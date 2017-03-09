@@ -20,6 +20,7 @@ class TimetablesController < ApplicationController
 
   # GET /timetables/1/edit
   def edit
+    @timetable.timetable_users.build
   end
 
   # POST /timetables

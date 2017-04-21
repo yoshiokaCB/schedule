@@ -27,14 +27,18 @@
   </div>
 
   <div class="field">
-    <%= f.label :timetable_users, "住所" %><br />
+    <%= f.label :timetable_users %><br />
     <%= f.fields_for :timetable_users do |tuf| %>
+    <p>
       <%= tuf.label :user_id %>
-      <%= tuf.number_field :user_id %>
+      <%= tuf.number_field :user_id %><br>
+      <%= tuf.label :notice %>
+      <%= tuf.text_area :notice %>
+    </p>
     <% end %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn' %>
   </div>
 <% end %>

@@ -27,20 +27,7 @@ one_day    = 60*60*24
     end_hour   += 1
     start_date = Time.new(n.year, n.mon, n.day, start_hour, start_min)
     end_date   = Time.new(n.year, n.mon, n.day, end_hour, end_min)
-    p start_date
-    p end_date
     Timetable.create(datetime: input_date, starttime: start_date, endtime: end_date)
   end
 
 end
-
-
-
-t = Timetable.new
-t.datetime = n
-# t.starttime =
-# t.endtime =
-
-
-# starttime: Wed, 08 Mar 2017 05:50:00 UTC +00:00,
- # endtime: Wed, 08 Mar 2017 05:50:00 UTC +00:00,

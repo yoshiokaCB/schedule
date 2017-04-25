@@ -5,6 +5,16 @@ class TimetablesController < ApplicationController
   # GET /timetables.json
   def index
     @timetables = Timetable.all
+    @timetables_json = @timetables.map do |tt|
+      {
+          id: tt.id,
+          title: "○",
+          description: "hogehoge",
+          start: tt.starttime,
+          end: tt.endtime,
+      }
+    end.to_json
+    p @timetables_json
   end
 
   # GET /timetables/1

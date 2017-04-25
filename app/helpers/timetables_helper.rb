@@ -70,6 +70,12 @@ module TimetablesHelper
             html << %*<span>*
             html << l.timetable_users.count.to_s
             html << %*</span>*
+            html << %*<span>*
+            html << link_to("登録", edit_timetable_path(l))
+            html << %*</span>*
+            html << %*<span>*
+            html << link_to("詳細確認", timetable_path(l))
+            html << %*</span>*
             # if l.link_url.present?
             #   html << %*<a href="#{l.link_url}" target="_blank" >#{l.title}</a>*
             # elsif l.page_id.blank?
